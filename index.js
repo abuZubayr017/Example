@@ -1,26 +1,19 @@
-// let moment = require('moment');
 
-// setInterval(() => {
-//     const time = moment().format();
-//     console.log(time);
-// }, 3000);
+const calculate = require('./hisob.js')
 
-// const inquirer = require('inquirer');
-// inquirer
-//     .prompt([{type:'input', name:'number', message:'enter number: '}])
-//     .then(answer => console.log('My number: ', answer.number))
-//     .catch(err => console.log(err));
+const result = calculate.multiply(19, 29);
+console.log(result);
+console.log('***********');
 
-// const validator = require('validator');
-// const a = validator.isEmail('sarvar@gmail.com');
-// const b = validator.isInt('100.5');
-// const c = validator.isIP('2001:2d8:e241:3398:c5a3:d55f:d506:5240')
-// console.log(c)
+const result2 = calculate.division(20, 5);
+console.log(result2);
 
-const {v4: uuidv4} = require('uuid');
-const random = uuidv4();
-console.log(random);
+const Account = require('./account');
+Account.tellMeAboutClass();
+Account.showMeTime();
 
-const chalk = require('chalk');
-const log = console.log;
-log(chalk.blue('my random uuid: ') + random + chalk.red(' !'));
+const myAccount = new Account('David', 50000000, 123456789);
+myAccount.showBalance();
+myAccount.depositMoney(200000);
+// withdraw to buy a new car
+myAccount.withdrawMoney(4000000)
